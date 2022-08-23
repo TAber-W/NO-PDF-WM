@@ -1,11 +1,14 @@
 # <div align='center'> <font>NO-PDF-WM</font> </div>
 
 <div align='center'> 
+ 
 <img src="https://img.shields.io/badge/Version-v1.1.0%20beta-orange"/>
 <img src="https://img.shields.io/badge/Languages-2-green"/>
 <img src="https://img.shields.io/badge/Commit-2022823-yellow"/>
 <br>
- <img src="https://img.shields.io/badge/PYQT-PYTHON-red" />
+<img src="https://img.shields.io/badge/PYQT-PYTHON-red" />
+<img src="https://img.shields.io/badge/author-TAber--W-blue" />
+ 
 </div>
 
 ## 提示！！
