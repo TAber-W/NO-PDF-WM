@@ -37,11 +37,17 @@ python版本为：<font face="黑体" color=blue>3.8.5</font>
 ![](/vi.png)
 
 ## 更新记录 
-
-    Rlease：V1.1.0 BETA
+    Rlease：V1.1.0 BETA🐱
 
     增加功能：设置RGB颜色，设置清晰度
 
-    更新时间：2022.8.23 10:35 AM BEIJING
+    更新时间：2022.8.23 10:35 BEIJING
+
+
+    Rlease：V1.1.3🐱
+
+    增加功能：应用图标，帮助跳转github🥝
+
+    更新时间：2022.8.26 20:32 BEIJING
 
 
