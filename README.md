@@ -19,7 +19,7 @@ WIN以及ANDROID正在开发中。喜欢的可以点一个🌟。
 <br></br>
 ## 简介 
 用途 删除PDF上的水印！！！
-最新版本：<font face="黑体" color=blue>V1.1.0 beta</font>
+最新版本：<font face="黑体" color=blue>V1.1.3 </font>
 
 目前经过测试的平台为：<font face="黑体" color=blue>MAC OS MONTEREY 12.3.1</font>
 
