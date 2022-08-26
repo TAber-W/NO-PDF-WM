@@ -84,7 +84,28 @@
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>451</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="actionbangzhu"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="actionbangzhu">
+   <property name="text">
+    <string>帮助</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

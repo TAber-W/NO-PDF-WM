@@ -2,15 +2,17 @@
 import sys
 import os
 from PyQt5.QtCore import QThread,pyqtSignal
-from PyQt5 import QtCore,QtGui,QtWidgets,uic
+from PyQt5 import QtCore,QtGui,QtWidgets,uic,Qt
 from PyQt5.QtWidgets import QApplication,QFileDialog,QInputDialog,QDialog,QMessageBox
 from PIL import Image
 from itertools import product
+import webbrowser
 import fitz
 import os
 
-import py
-from regex import W
+
+#import py
+#from regex import W
 
 sec=0
 page_no = 0
@@ -63,7 +65,11 @@ class Stats:
         self.ui.colorbutton.clicked.connect(self.xcolor)
         self.ui.savebutton.clicked.connect(self.xsave)
 
+        
+
         self.ui.workThread = WorkThread()
+
+        self.ui.actionbangzhu.triggered.connect(self.go_github)
         
         
         self.ui.workThread.end.connect(self.end)
@@ -114,7 +120,10 @@ class Stats:
         if col != "1":
             self.ui.textEdit.append('清晰度较大，速度较慢，耐心等待')
         
-
+    def go_github(self):
+        print("ddd")
+        url='https://github.com/TAber-W/NO-PDF-WM'
+        webbrowser.open(url)
 
 
     
@@ -124,5 +133,6 @@ if __name__ == "__main__":
     App = QApplication(sys.argv)
     
     stats = Stats()
+    stats.ui.setWindowIcon(QtGui.QIcon("/Users/apple/Desktop/dad/1.ico"))
     stats.ui.show()
     sys.exit(App.exec_())
