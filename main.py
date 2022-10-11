@@ -18,6 +18,7 @@ sec=0
 page_no = 0
 col = 0
 val = 0
+t = []
 filename = ""
 disname = ""
 class WorkThread(QThread):
@@ -42,9 +43,11 @@ class WorkThread(QThread):
             pix = page.get_pixmap(matrix=trans, alpha=False)
 
             #遍历图片中的宽和高，如果像素的rgb值总和大于510，就认为是水印，转换成255，255,255-->即白色
-            for pos in product(range(pix.width), range(pix.height)):
-                if sum(pix.pixel(pos[0], pos[1])) >= val:
-                    pix.set_pixel(pos[0], pos[1], (255, 255, 255))
+            for i in range (len(t)):
+
+                for pos in product(range(pix.width), range(pix.height)):
+                    if sum(pix.pixel(pos[0], pos[1])) >= t[i]:
+                        pix.set_pixel(pos[0], pos[1], (255, 255, 255))
             #保存去掉水印的截图
             pix.pil_save( disname+f'/{page_no}.png', dpi=(267, 267))
             #打印结果
@@ -84,7 +87,8 @@ class Stats:
         self.ui.textEdit.append(f'去除完成！！')
     
     def stop(self):
-        print
+        self.ui.workThread.stop()
+        
         
     def xwork(self):
         if(filename=="") :
@@ -102,9 +106,11 @@ class Stats:
         self.ui.saveline.setText(disname)
 
     def xvalue(self):
-        global val
-        val,ok = QInputDialog.getInt(self.ui,"水印数值","请输入水印RGB总和",255,0,765,2)
-        print(val)
+        global val,t
+        val,ok = QInputDialog.getText(self.ui,"水印数值","请输入水印RGB总和",text="多个水印用;分割")
+        t = val.split(";")
+        t=list(map(int,t))
+        
 
     def xfile(self):
         global filename
@@ -121,7 +127,7 @@ class Stats:
             self.ui.textEdit.append('清晰度较大，速度较慢，耐心等待')
         
     def go_github(self):
-        print("ddd")
+       
         url='https://github.com/TAber-W/NO-PDF-WM'
         webbrowser.open(url)
 
